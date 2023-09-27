@@ -3,6 +3,15 @@ package org.example;
 import java.util.LinkedList;
 
 public class Main {
+
+    static boolean linear_search(int[] nums, int numberToFind) {
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] == numberToFind) {
+                return true;
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
@@ -33,6 +42,7 @@ public class Main {
             System.out.println(current.val);
             current = current.next;
         }
+        System.out.println("going backwards");
         current = node3;
         while (current != null) {
             System.out.println(current.val);
