@@ -75,7 +75,6 @@ public class Main {
             current = current.prev;
         }
 
-        double start = System.nanoTime();
         int[] numbers = new int[100_000_000]; // Create an array to hold 1,000,000 numbers
 
         for (int i = 0; i < numbers.length; i++) {
@@ -83,8 +82,8 @@ public class Main {
         }
         int target = 99_000_000;
 
+        double start = System.nanoTime();
         int result = binarySearch(numbers, target);
-
         double end = (System.nanoTime() - start) / 1_000_000_000;
 
         System.out.println("Algorithm took " + end);
