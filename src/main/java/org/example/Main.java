@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Main {
     static int linearSearch(int[] nums, int numberToFind) {
@@ -38,6 +39,26 @@ public class Main {
         // If the target is not found in the array, return -1
         return -1;
     }
+
+    static void bubbleSort(int arr[]) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            boolean swapped = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if(arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j+1] = tmp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
@@ -92,6 +113,15 @@ public class Main {
         } else {
             System.out.println("Element not found in the array.");
         }
+
+        Random rand = new Random();
+        int[] numbers2 = new int[10000000];
+
+        for (int i = 0; i < numbers2.length; i++) {
+            numbers2[i] = rand.nextInt(100000);
+        }
+
+        bubbleSort(numbers2);
 
 
     }
