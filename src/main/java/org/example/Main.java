@@ -24,12 +24,19 @@ public class Main {
 
         head.next = node2;
         node2.next = node3;
+        node3.prev = node2;
+        node2.prev = head;
 
         Node current = head;
 
         while (current != null) {
             System.out.println(current.val);
             current = current.next;
+        }
+        current = node3;
+        while (current != null) {
+            System.out.println(current.val);
+            current = current.prev;
         }
     }
 }
